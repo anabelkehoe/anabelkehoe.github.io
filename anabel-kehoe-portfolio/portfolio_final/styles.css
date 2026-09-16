@@ -1,0 +1,594 @@
+/* ============================================
+   Anabel Kehoe Portfolio — shared stylesheet
+   Colors + proportions sourced directly from the
+   original site's PDF export (exact vector fills).
+   Font: Libre Franklin — closest open match to the
+   original Franklin Gothic LT Pro.
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+:root {
+  --navy: #0b1c40;           /* hero overlay / footer */
+  --about-blue: #416484;     /* about me band */
+  --exp-blue: #7698b6;       /* experience band */
+  --riptide-navy: #052461;   /* SEDS riptide section */
+  --tidepool-blue: #72a6d7;  /* SEDS tidepool section */
+  --charcoal: #2b2b2b;       /* dark section headers */
+  --bg-light: #edf0f2;       /* light gray project sections */
+  --text-light: #f4f6f9;
+  --text-muted: #cbd4e0;
+  --text-body-dark: #4a4a4a;
+  --border-light: rgba(255, 255, 255, 0.55);
+  --max-width: 1180px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Libre Franklin", "Franklin Gothic Medium", Arial, sans-serif;
+  color: var(--text-body-dark);
+  background: var(--bg-light);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+}
+
+.wrap {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+/* ---------- Top nav (added for site navigation) ---------- */
+.site-nav {
+  background: var(--navy);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.site-nav .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.site-nav .brand {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.site-nav a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  transition: color 0.15s ease;
+}
+
+.site-nav a:hover,
+.site-nav a.active {
+  color: #fff;
+}
+
+/* ---------- Hero (home page) ---------- */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: url("images/hero-bg.jpg") center 38% / cover no-repeat;
+  background-color: var(--navy);
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(11, 28, 64, 0.86) 0%,
+    rgba(11, 28, 64, 0.58) 46%,
+    rgba(11, 28, 64, 0.28) 100%
+  );
+}
+
+.hero .wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.hero h1 {
+  color: #fff;
+  font-size: 3.8rem;
+  margin: 0 0 16px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.hero .eyebrow {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 6px;
+  font-weight: 400;
+}
+
+.hero .tagline {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  margin: 0;
+}
+
+/* ---------- Page header (subpages) ---------- */
+.page-header {
+  background: var(--charcoal);
+  color: #fff;
+  padding: 58px 0 42px;
+  text-align: center;
+}
+
+.page-header h1 {
+  font-size: 3.2rem;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.page-header.left {
+  text-align: left;
+}
+
+.page-header p {
+  max-width: 760px;
+  color: var(--text-muted);
+  margin: 18px 0 0;
+  font-size: 0.96rem;
+}
+
+/* ---------- Generic section bands ---------- */
+section {
+  padding: 68px 0;
+}
+
+.band-about { background: var(--about-blue); color: var(--text-light); }
+.band-exp { background: var(--exp-blue); color: #fff; }
+.band-riptide { background: var(--riptide-navy); color: var(--text-light); }
+.band-tidepool { background: var(--tidepool-blue); color: #fff; }
+.band-navy { background: var(--navy); color: var(--text-light); }
+.band-charcoal { background: var(--charcoal); color: var(--text-light); }
+.band-light { background: var(--bg-light); color: var(--text-body-dark); }
+.band-dark-footer { background: var(--navy); color: var(--text-light); }
+
+section h2.section-title {
+  font-size: 0.85rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  margin: 0 0 22px;
+  font-weight: 700;
+}
+
+.band-exp h2.big-title,
+.band-light h2.big-title {
+  font-size: 2.8rem;
+  font-weight: 800;
+  margin: 0 0 26px;
+}
+
+.band-exp h2.big-title { color: var(--text-light); }
+.band-light h2.big-title { color: #3a3a3a; }
+
+/* ---------- About Me ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-grid p {
+  margin: 0 0 16px;
+  font-size: 0.98rem;
+}
+
+.about-grid img {
+  border-radius: 2px;
+  aspect-ratio: 386 / 257;
+  object-fit: cover;
+  width: 100%;
+}
+
+.contact-line a {
+  text-decoration: underline;
+}
+
+/* ---------- Experience ---------- */
+.exp-feature {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-bottom: 36px;
+}
+
+.exp-feature h3 {
+  font-size: 1.6rem;
+  margin: 0 0 14px;
+  font-weight: 700;
+}
+
+.exp-feature p {
+  margin: 0 0 14px;
+  font-size: 0.96rem;
+}
+
+.exp-feature img {
+  aspect-ratio: 320 / 213;
+  object-fit: cover;
+  width: 100%;
+}
+
+.exp-feature figcaption {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.75);
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--border-light);
+  color: #fff;
+  text-decoration: none;
+  padding: 12px 26px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  background: transparent;
+  transition: background 0.15s ease;
+}
+
+.btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.btn-dark {
+  border-color: #999;
+  color: #333;
+}
+
+.btn-dark:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+.exp-secondary {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.elveo-card {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 30px;
+  align-items: left;
+  padding: 0px;
+  margin-bottom: 40px;
+}
+
+.elveo-card img {
+  background: #fff;
+  padding: 50px;
+}
+
+.elveo-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.elveo-card p {
+  font-size: 0.92rem;
+  margin: 0 0 14px;
+}
+
+.mini-card {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+.mini-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 229 / 172;
+}
+
+.mini-card .mini-text h4 {
+  margin: 0 0 4px;
+  font-size: 0.98rem;
+  font-weight: 700;
+}
+
+.mini-card .mini-text .sub {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.85);
+  margin: 0 0 10px;
+}
+
+.mini-card .mini-text p {
+  font-size: 0.86rem;
+  margin: 0 0 14px;
+}
+
+.btn-small {
+  padding: 8px 18px;
+  font-size: 0.74rem;
+}
+
+/* ---------- Footer / Thank you ---------- */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  border: 1px solid rgba(255,255,255,0.25);
+  padding: 46px;
+}
+
+.footer-grid h2 {
+  font-size: 2.6rem;
+  margin: 0;
+  font-weight: 800;
+}
+
+.footer-grid .contact-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.footer-grid .contact-block p {
+  margin: 0 0 6px;
+  font-size: 0.92rem;
+}
+
+.footer-grid .contact-block a {
+  text-decoration: underline;
+}
+
+/* ---------- Subpages: two-column feature blocks ---------- */
+.feature-block {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.feature-block.reverse {
+  grid-template-columns: 1fr 1.25fr;
+}
+
+.feature-block.reverse .feature-img { order: 2; }
+.feature-block.reverse .feature-text { order: 1; }
+
+.feature-block h2 {
+  font-size: 2.6rem;
+  margin: 0 0 14px;
+  font-weight: 800;
+}
+
+.feature-block .lede {
+  font-weight: 700;
+  margin: 0 0 14px;
+}
+
+.feature-block p {
+  margin: 0 0 14px;
+  font-size: 0.95rem;
+}
+
+.feature-block img {
+  width: 100%;
+}
+
+.feature-block figcaption {
+  font-size: 0.78rem;
+  opacity: 0.8;
+  margin-top: 8px;
+}
+
+/* ---------- Role / dark detail section ---------- */
+
+.role-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 44px;
+  align-items: stretch;   /* was: align-items: start; */
+}
+
+.role-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.role-grid h2 {
+  font-size: 2.1rem;
+  font-weight: 800;
+}
+
+.role-grid .label {
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  color: #b9b9b9;
+  font-weight: 700;
+  margin: 26px 0 10px;
+  text-transform: uppercase;
+}
+
+.role-grid .label:first-child {
+  margin-top: 0;
+}
+
+.role-grid p {
+  margin-top: 24px;
+  font-size: 0.92rem;
+}
+
+.role-grid hr {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.2);
+  margin: 22px 0;
+}
+
+.role-title {
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin: 0 0 8px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+
+/* ---------- Projects grid (SEDS / Elveo / ARClab / UCSD) ---------- */
+.projects-title {
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin: 0 0 32px;
+  color: #2f2f2f;
+}
+
+.project {
+  margin-bottom: 50px;
+}
+
+.project:last-child {
+  margin-bottom: 0;
+}
+
+.project h3 {
+  font-size: 1.2rem;
+  margin: 0 0 14px;
+  color: #2f2f2f;
+  font-weight: 700;
+}
+
+.project-cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+}
+
+.project-cols.text-right .text { order: 2; }
+.project-cols.text-right .media { order: 1; }
+.project:has(.project-cols.text-right) h3 {
+  text-align: right;
+}
+
+.project p {
+  font-size: 0.92rem;
+  margin: 0 0 12px;
+}
+
+.media-row {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 12px;
+}
+
+.media-stack {
+  display: grid;
+  gap: 12px;
+}
+
+figure {
+  margin: 0;
+}
+
+figure figcaption {
+  font-size: 0.72rem;
+  color: #777;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* ---------- Simple text section (coursework intro) ---------- */
+.intro-text {
+  max-width: 900px;
+}
+
+.intro-text p {
+  margin: 0 0 14px;
+  font-size: 0.94rem;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 860px) {
+  .wrap { padding: 0 24px; }
+
+  .hero { min-height: 500px; }
+  .hero h1 { font-size: 2.4rem; }
+
+  .page-header h1 { font-size: 2.1rem; }
+
+  .about-grid,
+  .exp-feature,
+  .exp-secondary,
+  .elveo-card,
+  .mini-card,
+  .footer-grid,
+  .feature-block,
+  .feature-block.reverse,
+  .role-grid,
+  .project-cols,
+  .media-row {
+    grid-template-columns: 1fr !important;
+  }
+
+  .feature-block.reverse .feature-img,
+  .feature-block.reverse .feature-text,
+  .project-cols.text-right .text,
+  .project-cols.text-right .media {
+    order: initial;
+  }
+
+  .mini-card img { aspect-ratio: 16/9; }
+
+  .site-nav ul { gap: 16px; }
+}

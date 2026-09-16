@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SEDS @ UCSD — Anabel Kehoe Portfolio</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <a class="brand" href="index.html">ANABEL KEHOE</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="seds.html" class="active">SEDS @ UCSD</a></li>
+      <li><a href="elveo.html">Elveo</a></li>
+      <li><a href="arclab.html">ARClab</a></li>
+      <li><a href="ucsd-projects.html">School Projects</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header">
+  <div class="wrap">
+    <h1>SEDS@UCSD</h1>
+  </div>
+</header>
+
+<section class="band-riptide">
+  <div class="wrap feature-block">
+    <div class="feature-text">
+      <h2>Riptide</h2>
+      <p class="lede">Riptide was archived in 2026. I worked on the project from October 2024 to June 2026.</p>
+      <p>Riptide was a fifteen-foot, 1300lb, LOX and LNG self-landing rocket inspired by advances from SpaceX, Intuitive Machines, and Masten Space Systems, pushing the boundaries of collegiate aerospace engineering. Designed to compete in the Definity Project&rsquo;s Lander Challenge, it aimed to reach 200ft in altitude and land within a 32ft diameter circle fully autonomously. Riptide had also won project of the year at SEDS SpaceVision 2023.</p>
+      <p>Riptide is a part of SEDS (Students for the Exploration and Development of Space)</p>
+    </div>
+    <figure class="feature-img">
+      <img src="images/riptide-seds.jpg" alt="Riptide rocket at FAR launch site during sunset">
+      <figcaption>Riptide at FAR in May 2026. Image by me!</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="band-tidepool">
+  <div class="wrap feature-block reverse">
+    <div class="feature-text">
+      <h2>Tidepool</h2>
+      <p class="lede">I am the lead electrical engineer for the new self-landing rocket, Tidepool, which started in June 2026.</p>
+      <p>Tidepool is the new self-landing rocket designed with the lessons learned from Riptide. It will replace Riptide to compete in the Definity Project&rsquo;s Lander Challenge.</p>
+    </div>
+    <figure class="feature-img">
+      <img src="images/tidepool.jpg" alt="Tidepool sea anemones — project namesake imagery">
+    </figure>
+  </div>
+</section>
+
+<section class="band-charcoal">
+  <div class="wrap">
+    <h2 class="role-title">My Role: Director of Electrical Engineering</h2>
+    <div class="role-grid">
+      <div>
+        <img src="images/whiteboard.jpg" alt="Whiteboard diagram of the electrical power system architecture">
+      </div>
+      <div>
+        <p>For Tidepool, I am the lead designer for the entire Electrical system, including both the power and controls systems. My focus will be on the hardware for these systems (as that is my specialty), but I will lead the software team in research and task delegation.</p>
+        <p>All of the PCBs will be designed using <strong>Altium Designer</strong> and integrated into the mechanical system using <strong>Fusion 360</strong>.</p>
+        <p>I also contributed to all system tests such as leak checks and cold flows for Riptide, and will do the same for Tidepool.</p>
+        <hr>
+        <p class="label">Previous Leadership</p>
+        <p>During my Freshman year I was selected to be Avionics lead for Riptide; during this time I led a team of 7 people. I manage timelines, delegated technical work, and coordinated across multidisciplinary teams to drive system readiness and successful test execution. And managed the budget to create Bill&rsquo;s of Materials for all subteam costs</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band-light">
+  <div class="wrap">
+    <h2 class="projects-title">Projects and PCB Design</h2>
+
+<div class="project">
+  <div class="project-cols">
+    <div class="text">
+      <h3>Smart Efuse</h3>
+      <p>Designed a smart eFuse PCB in <strong>Altium Designer</strong> with programmable fault protection, incorporating delayed restart logic, dynamic fault timing, and real-time current-proportional voltage sensing to actively protect and manage power distribution in high-risk aerospace electrical systems.</p>
+    </div>
+    <div class="media-row">
+      <img src="images/efuse-photo.jpg" alt="Smart eFuse PCB, populated board on desk">
+      <img src="images/efuse-schematic.jpg" alt="Smart eFuse schematic">
+    </div>
+  </div>
+</div>
+
+<div class="project">
+  <div class="project-cols text-right" style="grid-template-columns: 340px 1fr; align-items:center;">
+    <div class="text">
+        <h3>Data Collection system for Riptide</h3>
+      <p>This 2 board system was originally designed by an older member. <strong>I sourced the components on the board, solved all errors that occurred, created the Bill of Materials, and performed the full assembly and testing.</strong> I worked on version 2 of the board to solve issues that appeared during testing. For instance, some traces had to be cut out of the board using a knife, and some connectors were difficult to use and fragile.</p>
+      <p>This system was designed in <strong>Altium Designer</strong>, and features 3 I2C buses, each consisting of 3 ADC chips and 3 MCP chips to read from 9 sensors.</p>
+      <p>Likewise, the microcontroller&rsquo;s output pins are used to control 21 relays (outputting 24V).</p>
+      <p>The boards convert from I2C &ndash;&gt; CAN through the Teensy and are transmitted throughout the system through the CAN transceivers.</p>
+    </div>
+    <div class="media">
+      <img src="images/datacol-photo.jpg" alt="Assembled data collection boards on desk">
+    </div>
+  </div>
+</div>
+
+<div class="project">
+  <div class="project-cols" style="grid-template-columns: 2fr 1fr; align-items: center;">
+    <div class="text">
+        <h3>Battery Protection Circuit</h3>
+
+      <p>Designed a battery protection and monitoring circuit that <strong>integrates both analog sensing and digital logic</strong> to enable real-time supervision of two 7-cell battery packs, including autonomous fault detection and system shutdown under unsafe conditions such as overcurrent or cell imbalance. This circuit uses 2 chips for fault protection and a Teensy microcontroller for emergency responses.</p>
+      <p>Working on creating a version for an 8-cell battery.</p>
+    </div>
+    <div class="media">
+      <img src="images/battery-note2.jpg" alt="Handwritten battery protection circuit sketch">
+    </div>
+  </div>
+</div>
+</section>
+
+<footer class="band-dark-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <h2>Thank you</h2>
+      <div class="contact-block">
+        <p class="contact-label">CONTACT</p>
+        <p>Anabel Kehoe</p>
+        <p><a href="mailto:ankehoe@ucsd.edu">ankehoe@ucsd.edu</a></p>
+        <p>(415) 480-9673</p>
+        <p><a href="#" target="_blank" rel="noopener">Linkedin</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
