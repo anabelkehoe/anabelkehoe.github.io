@@ -1,2 +1,0 @@
-# anabelkehoe.github.io
-Portfolio
